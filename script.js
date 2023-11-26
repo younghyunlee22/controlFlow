@@ -27,3 +27,18 @@ function predictPlantGrowth(numWeek) {
 predictPlantGrowth(1);
 predictPlantGrowth(2);
 predictPlantGrowth(3);
+
+function calculateAdditionalSpace(paramPlantCount, paramNumWeeks) {
+  for (let i = 0; i < paramNumWeeks; i++) {
+    paramPlantCount *= 2;
+  }
+
+  const totalArea = paramPlantCount * minAreaPerPlant;
+  const additionalSpace = totalArea - area;
+  const radiusOfExpandedGarden = Math.sqrt(totalArea / PI);
+
+  console.log(`Additional space required: ${additionalSpace}`);
+  console.log(`Radius of the expanded garden: ${radiusOfExpandedGarden}`);
+}
+
+calculateAdditionalSpace(100, 10);
