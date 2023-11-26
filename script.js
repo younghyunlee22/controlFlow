@@ -42,3 +42,20 @@ function calculateAdditionalSpace(paramPlantCount, paramNumWeeks) {
 }
 
 calculateAdditionalSpace(100, 10);
+
+function isAbleToStart(paramInitialPlantCount) {
+  try {
+    if (paramInitialPlantCount <= maxNumPlants) {
+      console.log(`You can start with ${paramInitialPlantCount} plants`);
+    } else {
+      throw new Error(
+        `You exceeded the maximum number of plants to start with. The max is ${maxNumPlants}`
+      );
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+isAbleToStart(100);
+isAbleToStart(98);
